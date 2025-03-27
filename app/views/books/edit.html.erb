@@ -1,0 +1,12 @@
+<h1>Edit book</h1>
+
+
+<%= form_with(model: @book) do |f|%>
+    <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </p>
+<p>
+    <%= f.submit %>
+    </p>
+<% end %>

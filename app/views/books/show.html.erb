@@ -1,0 +1,40 @@
+<h1>Kirjan tiedot</h1>
+
+<h2><%= @book.name %></h2>
+
+<p>
+Author:
+<strong>
+<%= @book.author %>
+</strong>
+</p>
+
+<p>
+Language:
+
+<% if @book.language.present? %>
+<strong>
+<%= @book.language %>
+</strong>
+<% else %>
+<em>Value is empty</em>
+<% end %>
+
+</p>
+
+
+<p>
+Published at:
+<strong>
+<%= @book.published_at %>
+</strong>
+</p>
+
+<p>
+<%= link_to "Edit", edit_book_path(@book) %>
+</p>
+
+<p>
+<%= link_to "Back to books", books_path %>
+</p>
+
