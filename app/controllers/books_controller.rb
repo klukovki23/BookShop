@@ -9,14 +9,23 @@ class BooksController < ApplicationController
         redirect_to root_path
         
     end
+
     def edit
         @book = Book.find_by!(id: params[:id])
     end
     def update
     
-        new_name = params[:book][:name]
         @book = Book.find_by!(id: params[:id])
-        @book.update(name: new_name)
+       if @book.update(book_params) 
         redirect_to book_path(@book)
+       else 
+        render :edit, status: :unprocessable_entity
     end
+end
+
+  private 
+      def book_params
+        params.expect(book: [:name, :author])
+      end
+
  end

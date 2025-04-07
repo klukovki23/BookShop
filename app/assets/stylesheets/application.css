@@ -75,3 +75,8 @@ header {
     font-style: italic;
     display: block; 
 }
+
+.field_with_errors {
+    display: inline;
+
+}
