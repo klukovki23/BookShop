@@ -1,24 +1,15 @@
 <header>
 </header>
+
+<%= render 'flash' %>
+
 <h1>
   <%= link_to "Bookshop", books_path %>
 </h1>
 
 <h2>Books</h2>
 <%= link_to "Back", root_path %>
+<%= link_to "New book", new_book_path %>
 
-<div class="container">
-  <h3>*Top 3 books*</h3> 
-
-  <% @books.each_with_index do |book, index| %>
-    <div class="book-box">
-      <p>
-        <%= index + 1 %>. <%= book.name %>
-        <%= link_to "Show details", book_path(book) %> 
-      </p>
-      <p class="author"> 
-        <%= book.author %>
-      </p>
-    </div>
-  <% end %>
-</div>
+<%= render partial:"book", collection: @books, as: :book %>
+ <%# %> 

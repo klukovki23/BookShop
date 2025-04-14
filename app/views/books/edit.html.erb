@@ -1,31 +1,5 @@
 <h1>Edit book</h1>
 
 
-<%= form_with(model: @book) do |f|%>
-
-    <% if f.object.errors.any? %>
-
-    <h3>Error occured</h3>
-    <ul>
-      <% f.object.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-      <% end %>  
-    </ul>
-      <% end %>
-
-    <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    </p>
-
-    <p>
-    <%= f.label :author %>
-    <%= f.text_field :author %>
-    </p>
-
-<p>
-    <%= f.submit %>
-<%=  link_to "Cancel", book_path(@book) %>
-
-    </p>
-<% end %>
+<%= render 'form' %>
+<%= link_to "Cancel", book_path(@book) %>

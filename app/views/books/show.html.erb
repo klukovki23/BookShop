@@ -1,3 +1,5 @@
+<%= render 'flash' %>
+
 <h1>Kirjan tiedot</h1>
 
 <h2><%= @book.name %></h2>
@@ -36,5 +38,14 @@ Published at:
 
 <p>
 <%= link_to "Back to books", books_path %>
+</p>
+
+<p>
+<%= link_to "Delete", book_path(@book), 
+data: {
+    turbo_method: :delete, 
+    turbo_confirm: "Deleting '#{@book.name}', are you sure?"
+} 
+    %>
 </p>
 
